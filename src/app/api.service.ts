@@ -1,16 +1,19 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Injectable, NgModule } from '@angular/core';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
+
+@NgModule({
+  imports: [
+    HttpClientModule // Agrega HttpClientModule a la lista de imports
+  ],
 })
 export class ApiService {
   private apiUrl = 'http://localhost:8000/api'; 
 
   constructor(private http: HttpClient) { }
 
-  login(email: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/login`, { email, password });
+  login(login:any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/users`, login );
   }
 }
