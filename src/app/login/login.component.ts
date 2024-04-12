@@ -20,8 +20,6 @@ export class LoginComponent {
 };
 
  login (){
-  this.PruebaService.login(this.userLogin).subscribe((res:any)=>{
-    console.log("Respuesta api",res)
-  })
+  this.PruebaService.login(this.userLogin).subscribe((res:any)=>{})
  }
 }

@@ -10,7 +10,7 @@ export class PruebaService {
   constructor(private http: HttpClient) {
    }
    login(login:any): Observable<any> {
-    return this.http.get(`${this.APIUrl}users`, login );
+    return this.http.post(`${this.APIUrl}login`, login );
   }
 
   //usersLogin
