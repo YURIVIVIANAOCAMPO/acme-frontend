@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ApiService } from '../api.service';
 import { PruebaService } from '../services/prueba.service';
 import { FormsModule } from '@angular/forms';
 
@@ -19,7 +18,9 @@ export class LoginComponent {
   password: '',
 };
 
- login (){
-  this.PruebaService.login(this.userLogin).subscribe((res:any)=>{})
+login (){
+  this.PruebaService.login(this.userLogin).subscribe((res:any)=>{
+    console.log("Respuesta api",res)
+  })
  }
 }
